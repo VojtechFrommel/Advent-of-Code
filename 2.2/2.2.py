@@ -4,7 +4,6 @@ import math
 inFile = open("2.2.txt","r")
 dataNotSplitted = inFile.read();
 data = dataNotSplitted.split(",");
-novedata = dataNotSplitted.split(",");
 
 inFile.close();
 
@@ -19,46 +18,25 @@ j = 0;
 k = 0;
 delka = len(data);
 
-#prevod vstupu na int
-##def novedata():
-##    print("entered");
-##    inFile = open("2.2.txt","r");
-##    dataNotSplitted = inFile.read();
-##    dataNotSplitted.split(",");
-##    inFile.close();
-##    for o in range (0, delka):
-##        data[o] = int(data[o])
-##    print("NOVEDATA:",data);
-##    return data;
-
 def vypocet(j,k):
     for i in range (0, delka):
-        #print("i:", i, "data[i]:", data[i]);
         if(i%4 == 0 or i == 0):
             #nastaveni aktualnich hodnot
             data[1] = j;
             data[2] = k;
             if(data[i] == 1):
-                #print("scitam")
                 index1 = data[i+1];
                 index2 = data[i+2];
                 index3 = data[i+3];
-                #print("indexy:", index1, " ", index2, " ", index3)
                 hodnota1 = data[index1];
                 hodnota2 = data[index2];
-                #print("hodnoty:", hodnota1, " ", hodnota2)
-                #print("data[i+3]:",data[i+3],"i3:", index3);
                 data[index3] = hodnota1 + hodnota2
             elif(data[i] == 2):
-                #print("nasobim")
                 index1 = data[i+1];
                 index2 = data[i+2];
                 index3 = data[i+3];
-                #print("indexy:", index1, " ", index2, " ", index3)
                 hodnota1 = data[index1];
                 hodnota2 = data[index2];
-                #print("hodnoty:", hodnota1, " ", hodnota2)
-                #print("data[i+3]:",data[i+3],"i3:", index3);
                 data[index3] = hodnota1 * hodnota2
             elif(data[i] == 99):
                 #print("HALT")
